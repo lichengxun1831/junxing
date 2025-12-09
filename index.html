@@ -1,0 +1,202 @@
+<!-- # 案例列表页（对应你提供的前3张图） -->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>东方君行案例中心</title>
+  <!-- 引入Bootstrap（快速实现响应式+基础样式） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- 自定义样式 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- 顶部导航栏（仿简道云导航） -->
+  <nav class="navbar case-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="公司logo" width="40" class="me-2">
+        东方君行案例中心
+      </a>
+    </div>
+  </nav>
+
+  <!-- 轮播图区域 -->
+  <section class="case-carousel"><!-- 新增轮播容器 -->
+    <!-- 轮播项（可添加多个） -->
+    <div class="carousel-items">
+      <!-- 轮播项1（对应蒙牛案例） -->
+      <div class="carousel-item active" style="background-image: url(images/banner1.jpg);"
+        data-detail-link="https://www.jiandaoyun.com/index/customer_case/22972"> <!-- 新增data属性：存储当前轮播对应的详情链接 -->
+        <div class="carousel-content">
+          <h2>东方君行案例中心</h2>
+          <h3>趵突泉：零代码构建可复制的跨国协同平台</h3>
+          <p>迭代效率100%提升，快速协同各部门实现数字化转型</p>
+          <div class="carousel-btns">
+            <button class="btn btn-success me-2 read-full-btn">阅读全文</button> <!-- 新增class：read-full-btn，用于绑定点击事件 -->
+            <a href="https://www.jiandaoyun.com/register" class="btn btn-outline-light">免费试用</a> <!-- 固定链接：免费试用 -->
+          </div>
+        </div>
+      </div>
+      <!-- 轮播项2（可添加更多，示例） -->
+      <div class="carousel-item" style="background-image: url(images/banner2.jpg);"
+        data-detail-link="https://www.jiandaoyun.com/index/customer_case/22972">
+        <div class="carousel-content">
+          <h2>东方君行案例中心</h2>
+          <h3>CVTE视源股份：ITBP驱动全民数字创新</h3>
+          <p>300+业务场景覆盖，效率提升40%</p>
+          <div class="carousel-btns">
+            <button class="btn btn-success me-2 read-full-btn">阅读全文</button>
+            <a href="https://www.jiandaoyun.com/register" class="btn btn-outline-light">免费试用</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 轮播指示器 -->
+    <div class="carousel-indicators">
+      <span class="indicator active"></span>
+      <span class="indicator"></span>
+    </div>
+    <!-- 轮播左右按钮 -->
+    <button class="carousel-btn prev-btn">&lt;</button>
+    <button class="carousel-btn next-btn">&gt;</button>
+  </section>
+
+  <!-- 案例筛选区域 -->
+  <section class="filter-wrap">
+    <!-- 标题+搜索框（新增：和示例一致的布局） -->
+    <div class="filter-header">
+      <h5 class="filter-title">案例筛选</h5>
+      <div class="search-box">
+        <input type="text" placeholder="按Enter键搜索关键词" class="search-input">
+        <button class="search-btn">🔍</button>
+      </div>
+    </div>
+    <!-- 筛选组1：按行业（新增下拉“其他”） -->
+    <div class="filter-group">
+      <span class="filter-label">按企业行业：</span>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-type="industry" data-value="all">全部</button>
+        <button class="filter-tag" data-type="industry" data-value="manufacture">制造</button>
+        <button class="filter-tag" data-type="industry" data-value="construction">建筑</button>
+        <button class="filter-tag" data-type="industry" data-value="retail">零售批发</button>
+        <button class="filter-tag" data-type="industry" data-value="service">服务</button>
+        <button class="filter-tag" data-type="industry" data-value="energy">能源电力</button>
+        <button class="filter-tag" data-type="industry" data-value="government">政府单位</button>
+        <button class="filter-tag" data-type="industry" data-value="finance">金融</button>
+
+      </div>
+    </div>
+    <!-- 筛选组2：按企业规模 -->
+    <div class="filter-group">
+      <span class="filter-label">按企业规模：</span>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-type="scale" data-value="all">全部</button>
+        <button class="filter-tag" data-type="scale" data-value="large">大中型</button>
+        <button class="filter-tag" data-type="scale" data-value="growing">成长型</button>
+      </div>
+    </div>
+    <!-- 筛选组3：按企业性质 -->
+    <div class="filter-group">
+      <span class="filter-label">按企业性质：</span>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-type="nature" data-value="all">全部</button>
+        <button class="filter-tag" data-type="nature" data-value="state">央企</button>
+        <button class="filter-tag" data-type="nature" data-value="private">民企</button>
+        <button class="filter-tag" data-type="nature" data-value="joint">合资</button>
+        <button class="filter-tag" data-type="nature" data-value="foreign">外企</button>
+        <button class="filter-tag" data-type="nature" data-value="gov">政府/事业单位</button>
+      </div>
+    </div>
+    <!-- 筛选组4：按使用场景（新增下拉“其他”） -->
+    <div class="filter-group">
+      <span class="filter-label">按使用场景：</span>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-type="scene" data-value="all">全部</button>
+        <button class="filter-tag" data-type="scene" data-value="hr">人事行政</button>
+        <button class="filter-tag" data-type="scene" data-value="sales">客户/销售</button>
+        <button class="filter-tag" data-type="scene" data-value="purchase">采购/供应商</button>
+        <button class="filter-tag" data-type="scene" data-value="inventory">进销存/仓库</button>
+        <button class="filter-tag" data-type="scene" data-value="production">生产/车间</button>
+        <button class="filter-tag" data-type="scene" data-value="project">项目/任务/工程</button>
+        <button class="filter-tag" data-type="scene" data-value="finance">财务/报销</button>
+        <button class="filter-tag" data-type="scene" data-value="asset">资产/设备/材料</button>
+        <button class="filter-tag" data-type="scene" data-value="store">门店经营</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 案例卡片列表 -->
+  <section class="container case-list">
+    <div class="case-card-wrap">
+      <!-- 案例1（点击跳转到另一个外部链接） -->
+      <div class="case-card" data-industry="manufacture" data-scale="large" data-nature="private" data-scene="hr"
+        onclick="window.open('https://www.jiandaoyun.com/index/customer_case/22972', '_blank')">
+        <img src="images/case2-cover.png" alt="趵突泉案例封面" class="case-card-img">
+        <h6 class="mt-2">趵突泉</h6>
+        <p class="case-card-desc">600名全民开发者，在数字世界实现高效创新</p>
+        <div class="case-card-tags">
+          <span class="tag">考勤</span>
+          <span class="tag">成本</span>
+          <span class="tag">会议</span>
+        </div>
+      </div>
+      <!-- 案例2（点击跳转到另一个外部链接） -->
+      <div class="case-card" data-industry="service" data-scale="growing" data-nature="joint" data-scene="sales"
+        onclick="window.open('https://www.jiandaoyun.com/index/customer_case/12542', '_blank')">
+        <img src="images/case1-cover.png" alt="蒙牛案例封面" class="case-card-img">
+        <h6 class="mt-2">CVTE视源股份</h6>
+        <p class="case-card-desc">ITBP如何驱动企业内的全民数字创新？</p>
+        <div class="case-card-tags">
+          <span class="tag">人事信息</span>
+          <span class="tag">进销存</span>
+          <span class="tag">CRM</span>
+        </div>
+      </div>
+      <!-- 案例3（新增：补全data-筛选属性） -->
+      <div class="case-card" data-industry="manufacture" data-scale="large" data-nature="foreign" data-scene="purchase"
+        onclick="window.open('https://www.jiandaoyun.com/index/customer_case/xxx', '_blank')">
+        <img src="images/case2-cover.png" alt="案例封面" class="case-card-img">
+        <h6 class="mt-2">上海巴斯夫聚氨酯</h6>
+        <p class="case-card-desc">零代码构建可复制的跨国协同平台</p>
+        <div class="case-card-tags">
+          <span class="tag">供应商</span>
+          <span class="tag">HSE</span>
+          <span class="tag">生产项目</span>
+        </div>
+      </div>
+      <!-- 案例4（新增：补全data-筛选属性） -->
+      <div class="case-card" data-industry="energy" data-scale="large" data-nature="private" data-scene="production"
+        onclick="window.open('https://www.jiandaoyun.com/index/customer_case/yyy', '_blank')">
+        <img src="images/case2-cover.png" alt="案例封面" class="case-card-img">
+        <h6 class="mt-2">东方日升</h6>
+        <p class="case-card-desc">业务部门深度参与数字化转型，创造规模性改善效益</p>
+        <div class="case-card-tags">
+          <span class="tag">设备</span>
+          <span class="tag">售后</span>
+          <span class="tag">后勤</span>
+        </div>
+      </div>
+    </div>
+    <!-- 分页区域 -->
+    <div class="pagination mt-5 text-center">
+      <button class="page-btn">&lt;</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">4</button>
+      <button class="page-btn">5</button>
+      <button class="page-btn">...</button>
+      <button class="page-btn">25</button>
+      <button class="page-btn">&gt;</button>
+    </div>
+  </section>
+  <!-- 引入JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
